@@ -11,7 +11,7 @@ class Infert extends Component {
 
   return(
 <div>
-    <h1>General</h1>
+    <h1>Infertility and Andrology</h1>
     <h3>General bla bla bla</h3>
 
     </div>
