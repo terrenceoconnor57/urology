@@ -5,6 +5,7 @@
 .App-header {
   background: black;
   position: sticky;
+  top: 0;
 
 }
 
@@ -23,6 +24,15 @@
 
 .links {
   text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+   .links {
+    font-size: 17px;
+
+  }
 }
 
 a {

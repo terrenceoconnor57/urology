@@ -24,10 +24,11 @@ class App extends Component {
     <div className="App">
       <header className="App-header">
       <ul className = 'navbar'>
+        <li className = 'navspec'><Link to = '/' className = 'links'>Home</Link></li>
         <li className = 'navspec'><Link to = '/General' className = 'links'>General</Link></li>
-        <li className = 'navspec'><Link to = '/Oncology' className = 'links'>Oncology</Link></li>
+        <li className = 'navspec'><Link to = '/Oncology' className = 'links'>Urologic Oncology</Link></li>
         <li className = 'navspec'><Link to = '/Infert' className = 'links'>Infertility /Andrology</Link></li>
-        <li className = 'navspec'><Link to = '/Pediatrics' className = 'links'>Pediatrics</Link></li>
+        <li className = 'navspec'><Link to = '/Pediatrics' className = 'links'>Pediatric Urology</Link></li>
         <li className = 'navspec'><Link to = '/Reconstruction' className = 'links'>Reconstruction /Trauma</Link></li>
         <li className = 'navspec'><Link to = '/Female' className = 'links'>Female Urology</Link></li>
         <li className = 'navspec'><Link to = '/Endo' className = 'links'>Endourology /MIS</Link></li>
@@ -43,6 +44,57 @@ class App extends Component {
       <Route path = '/Female' component = {Female} />
       <Route path = '/Endo' component = {Endo} />
       <Route path = '/Neuro' component = {Neuro} />
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <p>ajslhdfkjhasdfkjs</p>
+      <br/>
+      <p>ajslhdfkjhasdfkjs</p>
+      <br/>
+      <br/>
+      <br/>
+      <p>ajslhdfkjhasdfkjs</p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
     </BrowserRouter>
   );
