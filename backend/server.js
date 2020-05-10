@@ -20,8 +20,10 @@ console.log("MongoDB database connection established successfully");
 })
 
 const videosRouter = require('./routes/videos');
+const urologicRouter = require('./routes/urologic');
 
 app.use('/videos', videosRouter);
+app.use('/urologic', urologicRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

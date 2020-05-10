@@ -12,6 +12,6 @@ const urologicSchema = new Schema({
   timestamps: true,
 });
 
-const Urologic = mongoose.model('Video', videoSchema);
+const Urologic = mongoose.model('Urologic', urologicSchema);
 
 module.exports = Urologic;

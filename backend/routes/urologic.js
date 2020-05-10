@@ -3,7 +3,7 @@ let Urologic = require('../models/urologic.model');
 
 router.route('/').get((req, res) => {
   Urologic.find()
-    .then(videos => res.json(videos))
+    .then(urologic => res.json(urologic))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 

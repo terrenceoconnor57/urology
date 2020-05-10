@@ -27,9 +27,51 @@ class General extends Component {
 
   return(
 <div>
-    <h1>General</h1>
-    <h3>General bla bla bla</h3>
 
+
+    
+
+    <div className = 'stickysubmit'>
+    <div className = 'submission'>
+    <h1>Submit your videos here:</h1>
+
+    <div class="ui form">
+  <div class="fields">
+    <div class="field">
+      <label>Institution</label>
+      <input type="text" placeholder="Institution"/>
+    </div>
+    <div class="field">
+      <label>Presentation</label>
+      <input type="text" placeholder="Presentation"/>
+    </div>
+    <div class="field">
+      <label>Speaker</label>
+      <input type="text" placeholder="Speaker"/>
+    </div>
+    <div class="field">
+      <label>Date</label>
+      <input type="text" placeholder="Date"/>
+    </div>
+    <div class="field">
+      <label>Link</label>
+      <input type="text" placeholder="Link"/>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+<button class="submitbtn">Submit</button>
+</div>
+<br/>
+<br/>
+<br/>
+
+  <div className = 'colortable'>
+  <h1>General</h1>
+  <h3>General bla bla bla</h3>
     <div className = 'data'>
     <table class="ui celled table">
 <thead>
@@ -40,7 +82,7 @@ class General extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.general.map(gen => (
+  {this.state.general.reverse().map(gen => (
   <tr key = {gen._id}>
     <td data-label="Name">{gen.institution}</td>
     <td data-label="Age">{gen.presentation}</td>
@@ -52,7 +94,7 @@ class General extends Component {
 </tbody>
 </table>
 </div>
-
+</div>
     </div>
 
 
