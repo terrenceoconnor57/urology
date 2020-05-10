@@ -78,7 +78,7 @@ a {
   background: grey;
   width: 100px;
   height: 40px;
-
+  cursor: pointer;
 }
 
 .linky {

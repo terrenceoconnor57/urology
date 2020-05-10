@@ -5,9 +5,31 @@ import './App.css';
 
 
 class General extends Component {
-  state = {
-    general: []
+  constructor(props) {
+    super(props);
+
+      this.onChangeInstitution = this.onChangeInstitution.bind(this);
+      this.onChangePresentation = this.onChangePresentation.bind(this);
+      this.onChangeSpeaker = this.onChangeSpeaker.bind(this);
+      this.onChangeDate = this.onChangeDate.bind(this);
+      this.onChangeLink = this.onChangeLink.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+      general: [],
+      institution: "",
+      presentation: "",
+      speaker: "",
+      date: "",
+      link: ""
+    }
   }
+
+
+
+
+
+
 
   componentDidMount() {
     axios.get('http://localhost:5000/videos/')
@@ -19,6 +41,55 @@ class General extends Component {
       })
   }
 
+  onChangeInstitution(e) {
+    this.setState({
+      institution: e.target.value
+    })
+  }
+
+  onChangePresentation(e) {
+    this.setState({
+      presentation: e.target.value
+    })
+  }
+
+  onChangeSpeaker(e) {
+    this.setState({
+      speaker: e.target.value
+    })
+  }
+
+  onChangeDate(e) {
+    this.setState({
+      date: e.target.value
+    })
+  }
+
+  onChangeLink(e) {
+    this.setState({
+      link: e.target.value
+    })
+  }
+
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const videos = {
+      institution: this.state.institution,
+      presentation: this.state.presentation,
+      speaker: this.state.speaker,
+      date: this.state.date,
+      link: this.state.link
+    }
+
+    console.log(videos);
+
+    axios.post('http://localhost:5000/videos/add', videos)
+      .then(res => console.log(res.data));
+
+    window.location = '/General';
+  }
 
   render() {
 
@@ -29,33 +100,45 @@ class General extends Component {
 <div>
 
 
-    
 
+<form onSubmit={this.onSubmit}>
     <div className = 'stickysubmit'>
+
     <div className = 'submission'>
-    <h1>Submit your videos here:</h1>
+
+    <h1>Submit general urology videos here:</h1>
 
     <div class="ui form">
   <div class="fields">
     <div class="field">
       <label>Institution</label>
-      <input type="text" placeholder="Institution"/>
+      <input type="text" placeholder="Institution"
+      value = {this.state.institution}
+      onChange = {this.onChangeInstitution}/>
     </div>
     <div class="field">
       <label>Presentation</label>
-      <input type="text" placeholder="Presentation"/>
+      <input type="text" placeholder="Presentation"
+      value = {this.state.presentation}
+      onChange = {this.onChangePresentation}/>
     </div>
     <div class="field">
       <label>Speaker</label>
-      <input type="text" placeholder="Speaker"/>
+      <input type="text" placeholder="Speaker"
+      value = {this.state.speaker}
+      onChange = {this.onChangeSpeaker}/>
     </div>
     <div class="field">
       <label>Date</label>
-      <input type="text" placeholder="Date"/>
+      <input type="text" placeholder="Date"
+      value = {this.state.date}
+      onChange = {this.onChangeDate}/>
     </div>
     <div class="field">
       <label>Link</label>
-      <input type="text" placeholder="Link"/>
+      <input type="text" placeholder="Link"
+      value = {this.state.link}
+      onChange = {this.onChangeLink}/>
     </div>
 
   </div>
@@ -63,8 +146,9 @@ class General extends Component {
 </div>
 
 </div>
-<button class="submitbtn">Submit</button>
+<input class="submitbtn" type = "submit"/>
 </div>
+</form>
 <br/>
 <br/>
 <br/>
