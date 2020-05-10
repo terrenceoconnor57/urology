@@ -9,10 +9,13 @@ import Reconstruction from './Reconstruction';
 import Female from './Female';
 import Endo from './Endo';
 import Neuro from './Neuro';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+
   render() {
 
 
@@ -46,33 +49,6 @@ class App extends Component {
       <Route path = '/Neuro' component = {Neuro} />
       <br/>
       <br/>
-      <br/>
-      <div className = 'data'>
-      <table class="ui celled table">
-  <thead>
-    <tr><th>Name</th>
-    <th>Age</th>
-    <th>Job</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td data-label="Name">James</td>
-      <td data-label="Age">24</td>
-      <td data-label="Job">Engineer</td>
-    </tr>
-    <tr>
-      <td data-label="Name">Jill</td>
-      <td data-label="Age">26</td>
-      <td data-label="Job">Engineer</td>
-    </tr>
-    <tr>
-      <td data-label="Name">Elyse</td>
-      <td data-label="Age">24</td>
-      <td data-label="Job">Designer</td>
-    </tr>
-  </tbody>
-</table>
-</div>
       <br/>
       <br/>
       <br/>

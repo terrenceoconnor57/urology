@@ -44,3 +44,10 @@
 a {
   color: white;
 }
+
+.linky {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+
+}
