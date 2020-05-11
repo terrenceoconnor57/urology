@@ -11,6 +11,38 @@
 
 }
 
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgb(0,0,0,0.3);
+  z-index: 1100;
+}
+
+.side {
+  height: 100%;
+  background: white;
+  width: 300px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1500;
+  box-shadow: 5px 5px 10px;
+}
+
+.side ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidelink {
+  color: black;
+  font-size: 20px;
+  float: left;
+}
+
+
 .stickysubmit {
   position: sticky;
   top: 84px;
@@ -58,16 +90,41 @@
 
 }
 
-@media (max-width: 800px) {
+
+@media (max-width: 1000px) {
    .links {
     font-size: 17px;
 
   }
 }
 
+@media (max-width: 900px) {
+   .links {
+    display: none;
+
+  }
+}
+
 a {
   color: white;
+
 }
+
+.whiteburger {
+  color: white;
+  font-size: 10px;
+  display: none;
+
+}
+
+@media (max-width: 900px) {
+   .whiteburger {
+    font-size: 25px;
+    display: block;
+
+  }
+}
+
 
 .submission {
   z-index: 1;

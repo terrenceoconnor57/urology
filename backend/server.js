@@ -24,12 +24,18 @@ const urologicRouter = require('./routes/urologic');
 const infertilityRouter = require('./routes/infertility');
 const pediatricRouter = require('./routes/pediatric');
 const reconstructionRouter = require('./routes/reconstruction');
+const femaleRouter = require('./routes/female');
+const endourologyRouter = require('./routes/endourology');
+const neurourologyRouter = require('./routes/neurourology');
 
 app.use('/videos', videosRouter);
 app.use('/urologic', urologicRouter);
 app.use('/infertility', infertilityRouter);
 app.use('/pediatric', pediatricRouter);
 app.use('/reconstruction', reconstructionRouter);
+app.use('/female', femaleRouter);
+app.use('/endourology', endourologyRouter);
+app.use('/neurourology', neurourologyRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

@@ -9,16 +9,39 @@ import Reconstruction from './Reconstruction';
 import Female from './Female';
 import Endo from './Endo';
 import Neuro from './Neuro';
+import DrawerToggleButton from './SideDrawer/DrawerToggleButton';
+import SideDrawer from './SideDrawer/SideDrawer';
+import Backdrop from './SideDrawer/Backdrop';
 import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    sideDrawerOpen: false
+
+  }
+
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+
+  };
+
+  backdopClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+  }
 
 
   render() {
+    let sideDrawer;
+    let backdrop;
 
-
+    if (this.state.sideDrawerOpen) {
+      sideDrawer = <SideDrawer />
+      backdrop = <Backdrop backdropClick = {this.backdopClickHandler}/>
+    }
 
 
 
@@ -26,8 +49,10 @@ class App extends Component {
     <BrowserRouter>
     <div className="App">
       <header className="App-header">
+
       <ul className = 'navbar'>
-        <li className = 'navspec'><Link to = '/' className = 'links'>Home</Link></li>
+        <li className = 'navspec'><Link to = '/' className = 'links'>Home</Link><DrawerToggleButton
+        drawerClickHandler = {this.drawerToggleClickHandler}/></li>
         <li className = 'navspec'><Link to = '/General' className = 'links'>General</Link></li>
         <li className = 'navspec'><Link to = '/Oncology' className = 'links'>Urologic Oncology</Link></li>
         <li className = 'navspec'><Link to = '/Infert' className = 'links'>Infertility /Andrology</Link></li>
@@ -37,7 +62,11 @@ class App extends Component {
         <li className = 'navspec'><Link to = '/Endo' className = 'links'>Endourology /MIS</Link></li>
         <li className = 'navspec'><Link to = '/Neuro' className = 'links'>Neurourology</Link></li>
         </ul>
+
       </header>
+      {sideDrawer}
+      {backdrop}
+
       <Route path = '/' exact component = {Welcome} />
       <Route path = '/General' component = {General} />
       <Route path = '/Oncology' component = {Oncology} />
@@ -47,7 +76,7 @@ class App extends Component {
       <Route path = '/Female' component = {Female} />
       <Route path = '/Endo' component = {Endo} />
       <Route path = '/Neuro' component = {Neuro} />
-    
+
     </div>
     </BrowserRouter>
   );
