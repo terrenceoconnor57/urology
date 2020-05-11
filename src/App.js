@@ -29,7 +29,7 @@ class App extends Component {
 
   };
 
-  backdopClickHandler = () => {
+  backdropClickHandler = () => {
     this.setState({sideDrawerOpen: false});
   }
 
@@ -39,8 +39,8 @@ class App extends Component {
     let backdrop;
 
     if (this.state.sideDrawerOpen) {
-      sideDrawer = <SideDrawer />
-      backdrop = <Backdrop backdropClick = {this.backdopClickHandler}/>
+      sideDrawer = <SideDrawer backdropClick = {this.backdropClickHandler}/>
+      backdrop = <Backdrop backdropClick = {this.backdropClickHandler}/>
     }
 
 
@@ -76,7 +76,9 @@ class App extends Component {
       <Route path = '/Female' component = {Female} />
       <Route path = '/Endo' component = {Endo} />
       <Route path = '/Neuro' component = {Neuro} />
-
+      <footer>
+      <div> asdfsdfss</div>
+      </footer>
     </div>
     </BrowserRouter>
   );

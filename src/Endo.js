@@ -106,8 +106,9 @@ class Endo extends Component {
 
     <div className = 'submission'>
 
-    <h1>Submit general urology videos here:</h1>
+    <h1>Submit Endourology videos here:</h1>
 
+    <div className = 'centersubmit'>
     <div class="ui form">
   <div class="fields">
     <div class="field">
@@ -140,6 +141,7 @@ class Endo extends Component {
       value = {this.state.link}
       onChange = {this.onChangeLink}/>
     </div>
+    </div>
 
   </div>
 
@@ -154,8 +156,7 @@ class Endo extends Component {
 <br/>
 
   <div className = 'colortable'>
-  <h1>General</h1>
-  <h3>General bla bla bla</h3>
+  <h1 className = 'archive'>Endourology Archive</h1>
     <div className = 'data'>
     <table class="ui celled table">
 <thead>

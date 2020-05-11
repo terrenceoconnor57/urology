@@ -106,8 +106,9 @@ class Pediatrics extends Component {
 
     <div className = 'submission'>
 
-    <h1>Submit Urologic Oncology videos here:</h1>
+    <h1>Submit Pediatric Urology videos here:</h1>
 
+    <div className = 'centersubmit'>
     <div class="ui form">
   <div class="fields">
     <div class="field">
@@ -140,6 +141,7 @@ class Pediatrics extends Component {
       value = {this.state.link}
       onChange = {this.onChangeLink}/>
     </div>
+    </div>
 
   </div>
 
@@ -154,8 +156,7 @@ class Pediatrics extends Component {
 <br/>
 
   <div className = 'colortable'>
-  <h1>General</h1>
-  <h3>General bla bla bla</h3>
+  <h1 className = 'archive'>Pediatric Urology Archive</h1>
     <div className = 'data'>
     <table class="ui celled table">
 <thead>
