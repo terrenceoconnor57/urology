@@ -30,6 +30,11 @@
 
 }
 
+.datatext {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 17px;
+}
+
 .navspec {
   width: 100%;
 
@@ -42,7 +47,7 @@
 }
 
 .colortable {
-  background: rgb(148, 162, 168, 0.5);
+  background: rgb(116, 171, 194, 0.4);
   padding: 20px;
 }
 

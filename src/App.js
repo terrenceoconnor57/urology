@@ -47,58 +47,7 @@ class App extends Component {
       <Route path = '/Female' component = {Female} />
       <Route path = '/Endo' component = {Endo} />
       <Route path = '/Neuro' component = {Neuro} />
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <p>ajslhdfkjhasdfkjs</p>
-      <br/>
-      <p>ajslhdfkjhasdfkjs</p>
-      <br/>
-      <br/>
-      <br/>
-      <p>ajslhdfkjhasdfkjs</p>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+    
     </div>
     </BrowserRouter>
   );

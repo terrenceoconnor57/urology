@@ -168,11 +168,11 @@ class General extends Component {
 <tbody>
   {this.state.general.reverse().map(gen => (
   <tr key = {gen._id}>
-    <td data-label="Name">{gen.institution}</td>
-    <td data-label="Age">{gen.presentation}</td>
-    <td data-label="Job">{gen.speaker}</td>
-    <td data-label="Job">{gen.date}</td>
-    <td className = 'linky' data-label="Job" onClick={()=> window.open(gen.link)}>{gen.link}</td>
+    <td className = 'datatext' data-label="Name">{gen.institution}</td>
+    <td className = 'datatext' data-label="Age">{gen.presentation}</td>
+    <td className = 'datatext' data-label="Job">{gen.speaker}</td>
+    <td className = 'datatext' data-label="Job">{gen.date}</td>
+    <td className = 'datatext' className = 'linky' data-label="Job" onClick={()=> window.open(gen.link)}>{gen.link}</td>
   </tr>
   ))}
 </tbody>
