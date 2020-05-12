@@ -32,7 +32,7 @@ class Oncology extends Component {
 
 
   componentDidMount() {
-    axios.get('http://localhost:5000/urologic/')
+    axios.get('http://35.171.153.112:5000/urologic/')
       .then(response => {
         this.setState({ urolog: response.data })
       })
@@ -85,7 +85,7 @@ class Oncology extends Component {
 
     console.log(urologic);
 
-    axios.post('http://localhost:5000/urologic/add', urologic)
+    axios.post('http://35.171.153.112:5000/urologic/add', urologic)
       .then(res => console.log(res.data));
 
     window.location = '/Oncology';

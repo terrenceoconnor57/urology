@@ -32,7 +32,7 @@ class Female extends Component {
 
 
   componentDidMount() {
-    axios.get('http://localhost:5000/female/')
+    axios.get('http://35.171.153.112:5000/female/')
       .then(response => {
         this.setState({ female: response.data })
       })
@@ -85,7 +85,7 @@ class Female extends Component {
 
     console.log(female);
 
-    axios.post('http://localhost:5000/female/add', female)
+    axios.post('http://35.171.153.112:5000/female/add', female)
       .then(res => console.log(res.data));
 
     window.location = '/Female';

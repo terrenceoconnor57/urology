@@ -32,7 +32,7 @@ class Neuro extends Component {
 
 
   componentDidMount() {
-    axios.get('http://localhost:5000/neurourology/')
+    axios.get('http://35.171.153.112:5000/neurourology/')
       .then(response => {
         this.setState({ neurou: response.data })
       })
@@ -85,7 +85,7 @@ class Neuro extends Component {
 
     console.log(neurourology)
 
-    axios.post('http://localhost:5000/neurourology/add', neurourology)
+    axios.post('http://35.171.153.112:5000/neurourology/add', neurourology)
       .then(res => console.log(res.data));
 
     window.location = '/Neuro';
