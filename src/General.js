@@ -115,31 +115,36 @@ class General extends Component {
       <label>Institution</label>
       <input type="text" placeholder="Institution"
       value = {this.state.institution}
-      onChange = {this.onChangeInstitution}/>
+      onChange = {this.onChangeInstitution}
+      required/>
     </div>
     <div class="field">
       <label>Presentation</label>
       <input type="text" placeholder="Presentation"
       value = {this.state.presentation}
-      onChange = {this.onChangePresentation}/>
+      onChange = {this.onChangePresentation}
+      required/>
     </div>
     <div class="field">
       <label>Speaker</label>
       <input type="text" placeholder="Speaker"
       value = {this.state.speaker}
-      onChange = {this.onChangeSpeaker}/>
+      onChange = {this.onChangeSpeaker}
+      required/>
     </div>
     <div class="field">
       <label>Date</label>
       <input type="text" placeholder="Date"
       value = {this.state.date}
-      onChange = {this.onChangeDate}/>
+      onChange = {this.onChangeDate}
+      required/>
     </div>
     <div class="field">
       <label>Link</label>
       <input type="text" placeholder="Link"
       value = {this.state.link}
-      onChange = {this.onChangeLink}/>
+      onChange = {this.onChangeLink}
+      required/>
     </div>
     </div>
 

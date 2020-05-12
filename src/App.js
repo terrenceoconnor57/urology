@@ -76,9 +76,7 @@ class App extends Component {
       <Route path = '/Female' component = {Female} />
       <Route path = '/Endo' component = {Endo} />
       <Route path = '/Neuro' component = {Neuro} />
-      <footer>
-      <div> asdfsdfss</div>
-      </footer>
+      
     </div>
     </BrowserRouter>
   );
