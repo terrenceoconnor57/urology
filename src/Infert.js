@@ -32,7 +32,7 @@ class Infert extends Component {
 
 
   componentDidMount() {
-    axios.get('http://localhost:5000/infertility/')
+    axios.get('http://35.171.153.112:5000/infertility/')
       .then(response => {
         this.setState({ infert: response.data })
       })
@@ -85,7 +85,7 @@ class Infert extends Component {
 
     console.log(infertility);
 
-    axios.post('http://localhost:5000/infertility/add', infertility)
+    axios.post('http://35.171.153.112:5000/infertility/add', infertility)
       .then(res => console.log(res.data));
 
     window.location = '/Infert';
