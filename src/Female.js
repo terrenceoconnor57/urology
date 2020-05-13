@@ -159,6 +159,10 @@ class Female extends Component {
 
 </div>
 <input class="submitbtn" type = "submit"/>
+<h3 className = 'bold'>If you make a submission that you would like
+to delete or edit, please contact us at uroedcentral@gmail.com. We will
+check this email often to ensure that any changes will be made as quickly as
+possible.</h3>
 </div>
 </form>
 <br/>

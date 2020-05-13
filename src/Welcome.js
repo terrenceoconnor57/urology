@@ -33,6 +33,7 @@ class Welcome extends Component {
      site, submissions may only be available on Google Chrome, Firefox,
       and Microsoft Edge. We appreciate your patience while we work out these
       kinks!*</h4>
+      <br/>
 
     </div>
 
