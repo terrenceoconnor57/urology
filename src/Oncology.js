@@ -117,7 +117,7 @@ class Oncology extends Component {
     <div class="ui form">
   <div class="fields">
     <div class="field">
-      <label>Institution</label>
+      <label>Lecture Host</label>
       <input type="text" placeholder="Institution"
       value = {this.state.institution}
       onChange = {this.onChangeInstitution}
