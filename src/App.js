@@ -13,7 +13,6 @@ import DrawerToggleButton from './SideDrawer/DrawerToggleButton';
 import SideDrawer from './SideDrawer/SideDrawer';
 import Backdrop from './SideDrawer/Backdrop';
 import axios from 'axios';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -76,7 +75,7 @@ class App extends Component {
       <Route path = '/Female' component = {Female} />
       <Route path = '/Endo' component = {Endo} />
       <Route path = '/Neuro' component = {Neuro} />
-      
+
     </div>
     </BrowserRouter>
   );

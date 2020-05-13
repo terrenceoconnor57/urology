@@ -17,6 +17,17 @@
   margin-right: auto;
 }
 
+.welcomedivmobile {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .welcomedivmobile {
+    display: block;
+  }
+}
+
+
 .backdrop {
   position: fixed;
   width: 100%;
@@ -130,6 +141,7 @@ a {
   color: white;
   font-size: 10px;
   display: none;
+  cursor: pointer;
 
 }
 
@@ -151,6 +163,15 @@ a {
   padding: 10px;
 
 }
+
+ @media (max-width: 400px) {
+   .submission {
+     display: none;
+   }
+   .submitbtn {
+     display: none;
+   }
+ }
 
 .centersubmit {
   margin-left: 33px;

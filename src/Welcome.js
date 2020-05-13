@@ -10,6 +10,7 @@ class Welcome extends Component {
 
 
   return(
+    <div>
 <div className = 'welcomediv'>
     <h1>Welcome to UroEdCentral!</h1>
     <h3>Due to the recent COVID-19 outbreak,
@@ -28,8 +29,14 @@ class Welcome extends Component {
      concerns, ect. to the email address listed below. We greatly
      appreciate your interest in our website and hope that you find
      this helpful during this difficult time.</h3>
+     <h4>*Due to the short period of time we had to develop the
+     site, submissions may only be available on Google Chrome, Firefox,
+      and Microsoft Edge. We appreciate your patience while we work out these
+      kinks!*</h4>
 
     </div>
+
+</div>
 
 
 

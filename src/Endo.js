@@ -103,6 +103,11 @@ class Endo extends Component {
 
 <form onSubmit={this.onSubmit}>
     <div className = 'stickysubmit'>
+    <div className = 'welcomedivmobile'>
+    <h3>If you would like to submit any
+    information, please use the desktop
+    version of our site.</h3>
+    </div>
 
     <div className = 'submission'>
 
