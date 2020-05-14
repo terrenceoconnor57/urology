@@ -32,7 +32,7 @@ class Pediatrics extends Component {
 
 
   componentDidMount() {
-    axios.get('http://35.171.153.112:5000/pediatric/')
+    axios.get('http://52.23.208.167:5000/pediatric/')
       .then(response => {
         this.setState({ pediat: response.data })
       })
@@ -85,7 +85,7 @@ class Pediatrics extends Component {
 
     console.log(pediatric);
 
-    axios.post('http://35.171.153.112:5000/pediatric/add', pediatric)
+    axios.post('http://52.23.208.167:5000/pediatric/add', pediatric)
       .then(res => console.log(res.data));
 
     window.location = '/Pediatrics';

@@ -32,7 +32,7 @@ class Reconstruction extends Component {
 
 
   componentDidMount() {
-    axios.get('http://35.171.153.112:5000/reconstruction/')
+    axios.get('http://52.23.208.167:5000/reconstruction/')
       .then(response => {
         this.setState({ recon: response.data })
       })
@@ -85,7 +85,7 @@ class Reconstruction extends Component {
 
     console.log(reconstruction);
 
-    axios.post('http://35.171.153.112:5000/reconstruction/add', reconstruction)
+    axios.post('http://52.23.208.167:5000/reconstruction/add', reconstruction)
       .then(res => console.log(res.data));
 
     window.location = '/Reconstruction';

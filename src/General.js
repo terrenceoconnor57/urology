@@ -32,7 +32,7 @@ class General extends Component {
 
 
   componentDidMount() {
-    axios.get('http://35.171.153.112:5000/videos/')
+    axios.get('http://52.23.208.167:5000/videos/')
       .then(response => {
         this.setState({ general: response.data })
       })
@@ -85,7 +85,7 @@ class General extends Component {
 
     console.log(videos);
 
-    axios.post('http://35.171.153.112:5000/videos/add', videos)
+    axios.post('http://52.23.208.167:5000/videos/add', videos)
       .then(res => console.log(res.data));
 
     window.location = '/General';

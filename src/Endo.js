@@ -32,7 +32,7 @@ class Endo extends Component {
 
 
   componentDidMount() {
-    axios.get('http://35.171.153.112:5000/endourology/')
+    axios.get('http://52.23.208.167:5000/endourology/')
       .then(response => {
         this.setState({ endou: response.data })
       })
@@ -85,7 +85,7 @@ class Endo extends Component {
 
     console.log(endourology)
 
-    axios.post('http://35.171.153.112:5000/endourology/add', endourology)
+    axios.post('http://52.23.208.167:5000/endourology/add', endourology)
       .then(res => console.log(res.data));
 
     window.location = '/Endo';
