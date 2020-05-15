@@ -158,8 +158,8 @@ class Oncology extends Component {
 
 </div>
 <input class="submitbtn" type = "submit"/>
-<h3 className = 'bold'>If you make a submission that you would like
-to delete or edit, please contact us at uroedcentral@gmail.com. We will
+<h3 className = 'bold'>If you are having any issues submitting, or would like to delete or edit
+ one of your posts, please contact us at uroedcentral@gmail.com. We will
 check this email often to ensure that any changes will be made as quickly as
 possible.</h3>
 </div>
@@ -173,7 +173,7 @@ possible.</h3>
     <div className = 'data'>
     <table class="ui celled table">
 <thead>
-  <tr><th>Institution</th>
+  <tr><th>Host</th>
   <th>Presentation</th>
   <th>Speaker</th>
   <th>Date</th>

@@ -26,7 +26,7 @@ class Welcome extends Component {
      link to the video/presentation.</h3>
      <h3>This page is very much a work in progress, so we are interested
      in hearing your feedback! Please submit any questions, comments,
-     concerns, ect. to the email address listed below. We greatly
+     concerns, etc. to uroedcentral@gmail.com. We greatly
      appreciate your interest in our website and hope that you find
      this helpful during this difficult time.</h3>
      <h4>*Due to the short period of time we had to develop the
