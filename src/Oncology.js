@@ -186,7 +186,7 @@ possible.</h3>
     <td className = 'datatext' data-label="Age">{uro.presentation}</td>
     <td className = 'datatext' data-label="Job">{uro.speaker}</td>
     <td className = 'datatext' data-label="Job">{uro.date}</td>
-    <td className = 'datatext' className = 'linky' data-label="Job" onClick={()=> window.open(uro.link)}>{uro.link}</td>
+    <td className = 'linky' data-label="Job" onClick={()=> window.open(uro.link)}><a className = 'linkicon'><i class="video icon"></i></a></td>
   </tr>
   ))}
 </tbody>

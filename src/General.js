@@ -189,7 +189,7 @@ possible.</h3>
     <td className = 'datatext' data-label="Age">{gen.presentation}</td>
     <td className = 'datatext' data-label="Job">{gen.speaker}</td>
     <td className = 'datatext' data-label="Job">{gen.date}</td>
-    <td className = 'datatext' className = 'linky' data-label="Job" onClick={()=> window.open(gen.link)}>{gen.link}</td>
+    <td className = 'linky' data-label="Job" onClick={()=> window.open(gen.link)}><a className = 'linkicon'><i class="video icon"></i></a></td>
   </tr>
   ))}
 </tbody>

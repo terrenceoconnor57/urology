@@ -175,7 +175,7 @@ possible.</h3>
   <h1 className = 'archive'>Neurourology Archive</h1>
     <div className = 'data'>
     <table class="ui celled table">
-<thead>
+<thead className = 'datahead'>
   <tr><th>Host</th>
   <th>Presentation</th>
   <th>Speaker</th>
@@ -189,7 +189,7 @@ possible.</h3>
     <td className = 'datatext' data-label="Age">{neu.presentation}</td>
     <td className = 'datatext' data-label="Job">{neu.speaker}</td>
     <td className = 'datatext' data-label="Job">{neu.date}</td>
-    <td className = 'datatext' className = 'linky' data-label="Job" onClick={()=> window.open(neu.link)}>{neu.link}</td>
+    <td className = 'linky' data-label="Job" onClick={()=> window.open(neu.link)}><a className = 'linkicon'><i class="video icon"></i></a></td>
   </tr>
   ))}
 </tbody>

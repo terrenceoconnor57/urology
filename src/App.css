@@ -40,6 +40,15 @@
   }
 }
 
+.titlemain {
+  font-size: 50px;
+}
+
+@media (max-width: 500px) {
+  .titlemain {
+    font-size: 40px;
+  }
+}
 
 
 .backdrop {
@@ -122,6 +131,7 @@
 .colortable {
   background: rgb(116, 171, 194, 0.4);
   padding: 20px;
+
 }
 
 .data {
@@ -199,9 +209,62 @@ a {
   cursor: pointer;
 }
 
-.linky {
+.linkin {
+  flex-direction: column;
+
+}
+
+.iconslist {
+  list-style: none;
+  display: flex;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+@media (max-width: 500px) {
+  .iconslist {
+    margin-right: auto;
+    margin-left: 55px;
+  }
+}
+
+
+
+.socialicon {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+}
+
+@media (max-width: 500px) {
+  .socialicon {
+    margin-right: 30px;
+  }
+}
+
+.develop {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  font-size: 22px;
+}
+
+
+
+.linkicon {
+  color: blue;
+  font-size: 15px;
   cursor: pointer;
   text-decoration: underline;
-  color: blue;
 
+}
+
+@media (max-width: 500px) {
+  .linkicon {
+    font-size: 20px;
+  }
 }
