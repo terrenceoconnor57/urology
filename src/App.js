@@ -50,7 +50,7 @@ class App extends Component {
       <header className="App-header">
 
       <ul className = 'navbar'>
-        <li className = 'navspec'><Link to = '/' className = 'links'>Home</Link><DrawerToggleButton
+        <li className = 'navspec'><Link to = '/' className = 'links'><img className = 'logotop' src={"./urologotransparent.png"} /></Link><DrawerToggleButton
         drawerClickHandler = {this.drawerToggleClickHandler}/></li>
         <li className = 'navspec'><Link to = '/General' className = 'links'>General</Link></li>
         <li className = 'navspec'><Link to = '/Oncology' className = 'links'>Urologic Oncology</Link></li>

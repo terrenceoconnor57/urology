@@ -2,12 +2,35 @@
   text-align: center;
 }
 
+.mainpage {
+  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('surgery2.jpg');
+  background-size: 1300px 1100px;
+  margin-top: -15px;
+  background-repeat: none;
+  max-height: 610px;
+
+}
+
+@media (max-width: 500px) {
+  .mainpage {
+    background: none;
+  }
+}
+
+.logotop {
+  width: 60px;
+  height: 50px;
+}
+
+
 .App-header {
-  background: black;
+  background: white;
   position: sticky;
   top: 0;
   z-index: 1000;
   margin-bottom: 0px;
+  box-shadow: 0px 0px 3px;
+
 
 }
 
@@ -15,11 +38,13 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }
 
 .welcomedivmobile {
   display: none;
 }
+
 
 @media (max-width: 500px) {
   .welcomedivmobile {
@@ -41,13 +66,34 @@
 }
 
 .titlemain {
-  font-size: 50px;
+  font-size: 70px;
+  padding-top: 100px;
+
 }
 
 @media (max-width: 500px) {
   .titlemain {
     font-size: 40px;
+    padding-top: 10px;
+    color: black;
   }
+}
+
+.titleunder {
+  color: white;
+  padding-bottom: 400px;
+}
+
+@media (max-width: 500px) {
+  .titleunder {
+    padding-bottom: 0px;
+    color: black;
+  }
+}
+
+
+.mainpar {
+  color: black;
 }
 
 
@@ -126,10 +172,11 @@
   text-decoration: none;
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
+  color: black;
 }
 
 .colortable {
-  background: rgb(116, 171, 194, 0.4);
+  background: rgb(215, 236, 247);
   padding: 20px;
 
 }
@@ -162,7 +209,7 @@ a {
 }
 
 .whiteburger {
-  color: white;
+  color: black;
   font-size: 10px;
   display: none;
   cursor: pointer;
@@ -173,6 +220,7 @@ a {
    .whiteburger {
     font-size: 25px;
     display: block;
+
 
   }
 }
@@ -251,6 +299,7 @@ a {
   margin-right: auto;
   width: 100%;
   font-size: 22px;
+  color: black;
 }
 
 
