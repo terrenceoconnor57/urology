@@ -39,6 +39,7 @@ class General extends Component {
       .catch((error) => {
         console.log(error);
       })
+
   }
 
   onChangeInstitution(e) {

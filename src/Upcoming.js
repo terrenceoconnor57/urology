@@ -21,7 +21,7 @@ class Upcoming extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/upcoming/')
+    axios.get('http://52.23.208.167:5000/upcoming/')
       .then(response => {
         this.setState({ upcomings: response.data })
       })

@@ -27,6 +27,8 @@ const reconstructionRouter = require('./routes/reconstruction');
 const femaleRouter = require('./routes/female');
 const endourologyRouter = require('./routes/endourology');
 const neurourologyRouter = require('./routes/neurourology');
+const housesRouter = require('./routes/houses');
+const upcomingRouter = require('./routes/upcoming');
 
 app.use('/videos', videosRouter);
 app.use('/urologic', urologicRouter);
@@ -36,6 +38,9 @@ app.use('/reconstruction', reconstructionRouter);
 app.use('/female', femaleRouter);
 app.use('/endourology', endourologyRouter);
 app.use('/neurourology', neurourologyRouter);
+app.use('/houses', housesRouter);
+app.use('/upcoming', upcomingRouter);
+
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

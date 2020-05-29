@@ -20,7 +20,7 @@ class Houses extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/houses/')
+    axios.get('http://52.23.208.167:5000/houses/')
       .then(response => {
         this.setState({ houses: response.data })
       })
@@ -38,6 +38,8 @@ class Houses extends Component {
 
 
         <h1 className = 'mainhouse'>OPEN HOUSES</h1>
+
+        <div className = 'centermedia'>
 
         <Upcoming />
 
@@ -66,7 +68,7 @@ View
 
 </div>
 
-
+</div>
 
 </div>
 

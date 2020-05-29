@@ -15,6 +15,11 @@ class Welcome extends Component {
     <h1 className = 'titlemain'>Welcome to UroEdCentral!</h1>
     <h2 className = 'titleunder'>The central hub for educational urology resources</h2>
 
+
+
+
+    <h1 className = 'mission' >Our Mission</h1>
+
     <h3 className = 'mainpar'>Due to the recent COVID-19 outbreak,
     there has been a boom in virtual education
     resources for urology. We designed this website
