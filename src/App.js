@@ -14,8 +14,15 @@ import SideDrawer from './SideDrawer/SideDrawer';
 import Backdrop from './SideDrawer/Backdrop';
 import Houses from './Houses';
 import Contact from './Contact';
+import ReactGA from 'react-ga';
 import axios from 'axios';
 import './App.css';
+
+function initAnalyze(){
+ReactGA.initialize("UA-168664374-1")
+ReactGA.pageview("/Home")
+}
+
 
 class App extends Component {
   state = {
@@ -64,6 +71,8 @@ class App extends Component {
   }
 
 
+
+
   render() {
     let sideDrawer;
     let backdrop;
@@ -74,6 +83,7 @@ class App extends Component {
     }
 
 
+initAnalyze()
 
   return (
     <BrowserRouter>

@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReactGA from 'react-ga';
+
+
+
+function initAnalyze(){
+ReactGA.initialize("UA-168664374-1")
+ReactGA.pageview("/Contact")
+}
+
 
 class Contact extends Component {
     render(){
+
+      initAnalyze()
 
 
 

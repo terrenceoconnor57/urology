@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import ReactGA from 'react-ga';
+
+
+
+function initAnalyze(){
+ReactGA.initialize("UA-168664374-1")
+ReactGA.pageview("/General")
+}
 
 
 
@@ -94,7 +102,7 @@ class General extends Component {
 
   render() {
 
-
+    initAnalyze()
 
 
   return(
