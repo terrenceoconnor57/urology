@@ -14,6 +14,7 @@ import SideDrawer from './SideDrawer/SideDrawer';
 import Backdrop from './SideDrawer/Backdrop';
 import Houses from './Houses';
 import Contact from './Contact';
+import News from './News';
 import ReactGA from 'react-ga';
 import axios from 'axios';
 import './App.css';
@@ -148,7 +149,7 @@ Resources
       {backdrop}
 
 
-
+      
 
       <Route path = '/' exact component = {Welcome} />
       <Route path = '/General' component = {General} />

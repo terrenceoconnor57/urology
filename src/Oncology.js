@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import News from './News';
 import axios from 'axios';
 import './App.css';
 import ReactGA from 'react-ga';
@@ -109,69 +110,7 @@ class Oncology extends Component {
 
 
 
-<form onSubmit={this.onSubmit}>
-    <div className = 'stickysubmit'>
-    <div className = 'welcomedivmobile'>
-    <h3>If you would like to submit any
-    information, please use the desktop
-    version of our site.</h3>
-    </div>
-
-    <div className = 'submission'>
-
-    <h1>Submit Urologic Oncology videos here:</h1>
-
-    <div className = 'centersubmit'>
-    <div class="ui form">
-  <div class="fields">
-    <div class="field">
-      <label>Lecture Host</label>
-      <input type="text" placeholder="Institution"
-      value = {this.state.institution}
-      onChange = {this.onChangeInstitution}
-      required/>
-    </div>
-    <div class="field">
-      <label>Presentation</label>
-      <input type="text" placeholder="Presentation"
-      value = {this.state.presentation}
-      onChange = {this.onChangePresentation}
-      required/>
-    </div>
-    <div class="field">
-      <label>Speaker</label>
-      <input type="text" placeholder="Speaker"
-      value = {this.state.speaker}
-      onChange = {this.onChangeSpeaker}
-      required/>
-    </div>
-    <div class="field">
-      <label>Date</label>
-      <input type="text" placeholder="Date"
-      value = {this.state.date}
-      onChange = {this.onChangeDate}
-      required/>
-    </div>
-    <div class="field">
-      <label>Link</label>
-      <input type="text" placeholder="Link"
-      value = {this.state.link}
-      onChange = {this.onChangeLink}
-      required/>
-    </div>
-    </div>
-  </div>
-
-</div>
-
-</div>
-<input class="submitbtn" type = "submit"/>
-<h3 className = 'bold'>If you are having any issues submitting, or would like to delete or edit
- one of your posts, please contact us at uroedcentral@gmail.com. We will
-check this email often to ensure that any changes will be made as quickly as
-possible.</h3>
-</div>
-</form>
+<News endPoint = 'http://52.23.208.167:5000/urologic/'/>
 <br/>
 <br/>
 <br/>
