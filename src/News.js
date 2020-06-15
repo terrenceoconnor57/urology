@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import SearchBar from './SearchBar';
 import axios from 'axios';
 
 
 
 class News extends Component {
   state = {
-    general: []
+    general: [],
+    search: ""
   }
 
   componentWillReceiveProps(props) {
@@ -19,20 +21,14 @@ class News extends Component {
 
   }
 
-  nextLectures = () => {
-    axios.get('http://52.23.208.167:5000/videos/')
-      .then(response => {
-        this.setState({ general: response.data.slice(1,10) })
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-
-  }
+  
 
 
 
     render(){
+
+
+
 
 
       return(

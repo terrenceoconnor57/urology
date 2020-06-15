@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import News from './News';
+import SearchBar from './SearchBar';
+import FilterBar from './FilterBar';
 import axios from 'axios';
 import './App.css';
 import ReactGA from 'react-ga';
@@ -26,11 +28,14 @@ class General extends Component {
 
     this.state = {
       general: [],
+      search: "",
+      allfilters: [],
       institution: "",
       presentation: "",
       speaker: "",
       date: "",
-      link: ""
+      link: "",
+      appliedfilter: "No Filter applied"
     }
   }
 
@@ -101,7 +106,38 @@ class General extends Component {
     window.location = '/General';
   }
 
+
+  filteredAll = () => {
+    this.setState({ search: "",
+                  appliedfilter: "ALL LECTURES"})
+  }
+
+  filteredUCSF = () => {
+    this.setState({ search: 'UCSF',
+                    appliedfilter: "UCSF LECTURE SERIES"})
+
+  }
+
+  filteredEmpire = () => {
+    this.setState({ search: 'EMPIRE',
+                  appliedfilter: "EMPIRE LECTURE SERIES"})
+
+
+  }
+
+
+
+
   render() {
+
+
+
+
+    let filteredSeries = this.state.general.filter((gen) => {
+            return gen.institution.toLowerCase().includes(this.state.search.toLowerCase())
+         })
+
+
 
     initAnalyze()
 
@@ -114,7 +150,21 @@ class General extends Component {
 <News endPoint = 'http://52.23.208.167:5000/videos/'/>
 <br/>
 <br/>
-<br/>
+
+<div className = 'stick'>
+<div className = 'choices'>
+<ul className = 'taglist'>
+  <a className = 'filters'>Filters:</a>
+  <a className = 'focusin' onClick = {this.filteredAll}>All Lectures</a>
+  <a className = 'focusin' onClick = {this.filteredUCSF}>UCSF Series</a>
+  <a className = 'focusin' onClick = {this.filteredEmpire}>Empire Series</a>
+</ul>
+<h2 className = 'applyfilter'>Filter applied:  <a class="ui teal tag label" style = {{cursor: 'default'}}>{this.state.appliedfilter}</a></h2>
+</div>
+</div>
+
+
+
 
   <div className = 'colortable'>
   <h1 className = 'archive'>General Urology Archive</h1>
@@ -128,7 +178,7 @@ class General extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.general.reverse().map(gen => (
+  {filteredSeries.reverse().map(gen => (
   <tr key = {gen._id}>
     <td className = 'datatext' data-label="Name">{gen.institution}</td>
     <td className = 'datatext' data-label="Age">{gen.presentation}</td>

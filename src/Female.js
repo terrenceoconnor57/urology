@@ -26,11 +26,14 @@ class Female extends Component {
 
     this.state = {
       female: [],
+      search: "",
+      allfilters: [],
       institution: "",
       presentation: "",
       speaker: "",
       date: "",
-      link: ""
+      link: "",
+      appliedfilter: "No Filter applied"
     }
   }
 
@@ -100,7 +103,32 @@ class Female extends Component {
     window.location = '/Female';
   }
 
+  filteredAll = () => {
+    this.setState({ search: "",
+                  appliedfilter: "ALL LECTURES"})
+  }
+
+  filteredUCSF = () => {
+    this.setState({ search: 'UCSF',
+                    appliedfilter: "UCSF LECTURE SERIES"})
+
+  }
+
+  filteredEmpire = () => {
+    this.setState({ search: 'EMPIRE',
+                  appliedfilter: "EMPIRE LECTURE SERIES"})
+  }
+
+  filteredIcs = () => {
+    this.setState({ search: 'ICS',
+                  appliedfilter: "ICS LIVE SERIES"})
+  }
+
   render() {
+
+    let filteredSeries = this.state.female.filter((fem) => {
+            return fem.institution.toLowerCase().includes(this.state.search.toLowerCase())
+         })
 
     initAnalyze()
 
@@ -113,6 +141,20 @@ class Female extends Component {
 <News endPoint = 'http://52.23.208.167:5000/female/'/>
 <br/>
 <br/>
+
+<div className = 'stick'>
+<div className = 'choices'>
+<ul className = 'taglist'>
+  <a className = 'filters'>Filters:</a>
+  <a className = 'focusin' onClick = {this.filteredAll}>All Lectures</a>
+  <a className = 'focusin' onClick = {this.filteredUCSF}>UCSF Series</a>
+  <a className = 'focusin' onClick = {this.filteredEmpire}>Empire Series</a>
+  <a className = 'focusin' onClick = {this.filteredIcs}>ICS Series</a>
+</ul>
+<h2 className = 'applyfilter'>Filter applied:  <a class="ui teal tag label" style = {{cursor: 'default'}}>{this.state.appliedfilter}</a></h2>
+</div>
+</div>
+
 <br/>
 
   <div className = 'colortable'>
@@ -127,7 +169,7 @@ class Female extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.female.reverse().map(fem => (
+  {filteredSeries.reverse().map(fem => (
   <tr key = {fem._id}>
     <td className = 'datatext' data-label="Name">{fem.institution}</td>
     <td className = 'datatext' data-label="Age">{fem.presentation}</td>

@@ -25,11 +25,14 @@ class Endo extends Component {
 
     this.state = {
       endou: [],
+      search: "",
+      allfilters: [],
       institution: "",
       presentation: "",
       speaker: "",
       date: "",
-      link: ""
+      link: "",
+      appliedfilter: "No Filter applied"
     }
   }
 
@@ -99,7 +102,37 @@ class Endo extends Component {
     window.location = '/Endo';
   }
 
+  filteredAll = () => {
+    this.setState({ search: "",
+                  appliedfilter: "ALL LECTURES"})
+  }
+
+  filteredUCSF = () => {
+    this.setState({ search: 'UCSF',
+                    appliedfilter: "UCSF LECTURE SERIES"})
+
+  }
+
+  filteredEmpire = () => {
+    this.setState({ search: 'EMPIRE',
+                  appliedfilter: "EMPIRE LECTURE SERIES"})
+  }
+
+  filteredEau = () => {
+    this.setState({ search: 'EAU',
+                  appliedfilter: "EAU - UROWEBINAR SERIES"})
+  }
+
+  filteredCollab = () => {
+    this.setState({ search: 'TEACHING COLLABORATIVE',
+                  appliedfilter: "TEACHING COLLABORATIVE SERIES"})
+  }
+
   render() {
+
+    let filteredSeries = this.state.endou.filter((end) => {
+            return end.institution.toLowerCase().includes(this.state.search.toLowerCase())
+         })
 
     initAnalyze()
 
@@ -112,6 +145,21 @@ class Endo extends Component {
 <News endPoint = 'http://52.23.208.167:5000/endourology/'/>
 <br/>
 <br/>
+
+<div className = 'stick'>
+<div className = 'choices'>
+<ul className = 'taglist'>
+  <a className = 'filters'>Filters:</a>
+  <a className = 'focusin' onClick = {this.filteredAll}>All Lectures</a>
+  <a className = 'focusin' onClick = {this.filteredUCSF}>UCSF Series</a>
+  <a className = 'focusin' onClick = {this.filteredEmpire}>Empire Series</a>
+  <a className = 'focusin' onClick = {this.filteredEau}>EAU Series</a>
+  <a className = 'focusin' onClick = {this.filteredCollab}>Teaching Collab Series</a>
+</ul>
+<h2 className = 'applyfilter'>Filter applied:  <a class="ui teal tag label" style = {{cursor: 'default'}}>{this.state.appliedfilter}</a></h2>
+</div>
+</div>
+
 <br/>
 
   <div className = 'colortable'>
@@ -126,7 +174,7 @@ class Endo extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.endou.reverse().map(end => (
+  {filteredSeries.reverse().map(end => (
   <tr key = {end._id}>
     <td className = 'datatext' data-label="Name">{end.institution}</td>
     <td className = 'datatext' data-label="Age">{end.presentation}</td>

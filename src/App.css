@@ -3,8 +3,8 @@
 }
 
 .mainpage {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('surgery2.jpg');
-  background-size: 1300px 1100px;
+  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('notes.jpg');
+  background-size: 1500px 1100px;
   margin-top: -15px;
   background-repeat: none;
   max-height: 610px;
@@ -151,7 +151,7 @@
   align-items: center;
   margin-top: 0;
   padding: 20px;
-  background: black;
+  background: rgb(0,128,128);
 
 }
 .lect:hover {
@@ -257,7 +257,7 @@
   text-decoration: none;
   font-family: 'Oswald', sans-serif;
   font-size: 17px;
-  color: rgb(0, 120, 215);
+  color: rgb(12, 168, 168);
 }
 
 .links2:hover {
@@ -509,7 +509,7 @@ a {
 }
 
 .cardtact {
-  background: rgb(0, 0, 0,0.9);
+  background: rgb(0, 0, 0,0.8);
   width: 350px;
   height: 280px;
   color: white;
@@ -600,7 +600,10 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-
+  background: rgb(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 10px;
+  padding-top: 15px;
 
 }
 
@@ -613,6 +616,10 @@ a {
   width: 200px;
   height: 120px;
   cursor: pointer;
+}
+
+.image:hover {
+  filter: brightness(50%);
 }
 
 .contenttitle {
@@ -633,4 +640,68 @@ a {
 .cardcontent {
   margin-top: -5px;
   width: 200px;
+}
+
+
+
+.taglist {
+  display: flex;
+
+  margin-left: 20px;
+  margin-right: auto;
+  width: 40%;
+
+
+}
+
+@media (max-width: 1000px) {
+   .stick {
+    display: none;
+
+
+  }
+}
+
+.filters {
+  font-size: 30px;
+  color: white;
+
+
+}
+
+
+
+
+.choices {
+  background: rgb(0,0,0,0.8);
+  display: flex;
+}
+
+
+.focusin {
+  color: white;
+  margin-right: 20px;
+  margin-left: 10px;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: 'Oswald', sans-serif;
+  background: rgb(12, 168, 168);
+
+}
+
+.focusin:hover {
+  background: rgb(12, 168, 168,0.7);
+  color: white;
+}
+
+
+
+.applyfilter {
+  margin-left: 20px;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 10px;
+  color: white;
+
 }

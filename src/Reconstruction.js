@@ -26,11 +26,14 @@ class Reconstruction extends Component {
 
     this.state = {
       recon: [],
+      search: "",
+      allfilters: [],
       institution: "",
       presentation: "",
       speaker: "",
       date: "",
-      link: ""
+      link: "",
+      appliedfilter: "No Filter applied"
     }
   }
 
@@ -100,7 +103,33 @@ class Reconstruction extends Component {
     window.location = '/Reconstruction';
   }
 
+  filteredAll = () => {
+    this.setState({ search: "",
+                  appliedfilter: "ALL LECTURES"})
+  }
+
+  filteredUCSF = () => {
+    this.setState({ search: 'UCSF',
+                    appliedfilter: "UCSF LECTURE SERIES"})
+
+  }
+
+  filteredEmpire = () => {
+    this.setState({ search: 'EMPIRE',
+                  appliedfilter: "EMPIRE LECTURE SERIES"})
+  }
+
+  filteredRecon = () => {
+    this.setState({ search: 'GU RECON',
+                  appliedfilter: "GU RECON SERIES"})
+  }
+
+
   render() {
+
+    let filteredSeries = this.state.recon.filter((rec) => {
+            return rec.institution.toLowerCase().includes(this.state.search.toLowerCase())
+         })
 
     initAnalyze()
 
@@ -113,6 +142,20 @@ class Reconstruction extends Component {
 <News endPoint = 'http://52.23.208.167:5000/reconstruction/'/>
 <br/>
 <br/>
+
+<div className = 'stick'>
+<div className = 'choices'>
+<ul className = 'taglist'>
+  <a className = 'filters'>Filters:</a>
+  <a className = 'focusin' onClick = {this.filteredAll}>All Lectures</a>
+  <a className = 'focusin' onClick = {this.filteredUCSF}>UCSF Series</a>
+  <a className = 'focusin' onClick = {this.filteredEmpire}>Empire Series</a>
+  <a className = 'focusin' onClick = {this.filteredRecon}>GU Recon Series</a>
+</ul>
+<h2 className = 'applyfilter'>Filter applied:  <a class="ui teal tag label" style = {{cursor: 'default'}}>{this.state.appliedfilter}</a></h2>
+</div>
+</div>
+
 <br/>
 
   <div className = 'colortable'>
@@ -127,7 +170,7 @@ class Reconstruction extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.recon.reverse().map(rec => (
+  {filteredSeries.reverse().map(rec => (
   <tr key = {rec._id}>
     <td className = 'datatext' data-label="Name">{rec.institution}</td>
     <td className = 'datatext' data-label="Age">{rec.presentation}</td>

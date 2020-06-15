@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import News from './News';
+import FilterBar from './FilterBar';
 import axios from 'axios';
 import './App.css';
 import ReactGA from 'react-ga';
@@ -26,11 +27,14 @@ class Oncology extends Component {
 
     this.state = {
       urolog: [],
+      search: "",
+      allfilters: [],
       institution: "",
       presentation: "",
       speaker: "",
       date: "",
-      link: ""
+      link: "",
+      appliedfilter: "No Filter applied"
     }
   }
 
@@ -100,9 +104,42 @@ class Oncology extends Component {
     window.location = '/Oncology';
   }
 
+
+  filteredAll = () => {
+    this.setState({ search: "",
+                  appliedfilter: "ALL LECTURES"})
+  }
+
+  filteredUCSF = () => {
+    this.setState({ search: 'UCSF',
+                    appliedfilter: "UCSF LECTURE SERIES"})
+  }
+
+  filteredEmpire = () => {
+    this.setState({ search: 'EMPIRE',
+                  appliedfilter: "EMPIRE LECTURE SERIES"})
+
+  }
+
+  filteredSixty = () => {
+    this.setState({ search: '60 Minutes',
+                  appliedfilter: "UROLOGY 60 MINUTES"})
+
+  }
+
+  filteredCollab = () => {
+    this.setState({ search: 'Urology Teaching Collaborative',
+                  appliedfilter: "UROLOGY TEACHING COLLABORATIVE"})
+
+  }
+
   render() {
 
     initAnalyze()
+
+    let filteredSeries = this.state.urolog.filter((uro) => {
+            return uro.institution.toLowerCase().includes(this.state.search.toLowerCase())
+         })
 
 
   return(
@@ -113,6 +150,21 @@ class Oncology extends Component {
 <News endPoint = 'http://52.23.208.167:5000/urologic/'/>
 <br/>
 <br/>
+
+<div className = 'stick'>
+<div className = 'choices'>
+<ul className = 'taglist'>
+  <a className = 'filters'>Filters:</a>
+  <a className = 'focusin' onClick = {this.filteredAll}>All Lectures</a>
+  <a className = 'focusin' onClick = {this.filteredUCSF}>UCSF Series</a>
+  <a className = 'focusin' onClick = {this.filteredEmpire}>Empire Series</a>
+  <a className = 'focusin' onClick = {this.filteredSixty}>60 Minutes</a>
+  <a className = 'focusin' onClick = {this.filteredCollab}>Teaching Collab</a>
+</ul>
+<h2 className = 'applyfilter'>Filter applied:  <a class="ui teal tag label" style = {{cursor: 'default'}}>{this.state.appliedfilter}</a></h2>
+</div>
+</div>
+
 <br/>
 
   <div className = 'colortable'>
@@ -127,7 +179,7 @@ class Oncology extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.urolog.reverse().map(uro => (
+  {filteredSeries.reverse().map(uro => (
   <tr key = {uro._id}>
     <td className = 'datatext' data-label="Name">{uro.institution}</td>
     <td className = 'datatext' data-label="Age">{uro.presentation}</td>

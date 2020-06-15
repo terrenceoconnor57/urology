@@ -26,11 +26,14 @@ class Pediatrics extends Component {
 
     this.state = {
       pediat: [],
+      search: "",
+      allfilters: [],
       institution: "",
       presentation: "",
       speaker: "",
       date: "",
-      link: ""
+      link: "",
+      appliedfilter: "No Filter applied"
     }
   }
 
@@ -100,7 +103,30 @@ class Pediatrics extends Component {
     window.location = '/Pediatrics';
   }
 
+  filteredAll = () => {
+    this.setState({ search: "",
+                  appliedfilter: "ALL LECTURES"})
+  }
+
+  filteredUCSF = () => {
+    this.setState({ search: 'UCSF',
+                    appliedfilter: "UCSF LECTURE SERIES"})
+
+  }
+
+  filteredEmpire = () => {
+    this.setState({ search: 'EMPIRE',
+                  appliedfilter: "EMPIRE LECTURE SERIES"})
+
+
+  }
+
   render() {
+
+    let filteredSeries = this.state.pediat.filter((ped) => {
+            return ped.institution.toLowerCase().includes(this.state.search.toLowerCase())
+         })
+
 
 
     initAnalyze()
@@ -113,6 +139,19 @@ class Pediatrics extends Component {
 <News endPoint = 'http://52.23.208.167:5000/pediatric/'/>
 <br/>
 <br/>
+
+<div className = 'stick'>
+<div className = 'choices'>
+<ul className = 'taglist'>
+  <a className = 'filters'>Filters:</a>
+  <a className = 'focusin' onClick = {this.filteredAll}>All Lectures</a>
+  <a className = 'focusin' onClick = {this.filteredUCSF}>UCSF Series</a>
+  <a className = 'focusin' onClick = {this.filteredEmpire}>Empire Series</a>
+</ul>
+<h2 className = 'applyfilter'>Filter applied:  <a class="ui teal tag label" style = {{cursor: 'default'}}>{this.state.appliedfilter}</a></h2>
+</div>
+</div>
+
 <br/>
 
   <div className = 'colortable'>
@@ -127,7 +166,7 @@ class Pediatrics extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.pediat.reverse().map(ped => (
+  {filteredSeries.reverse().map(ped => (
   <tr key = {ped._id}>
     <td className = 'datatext' data-label="Name">{ped.institution}</td>
     <td className = 'datatext' data-label="Age">{ped.presentation}</td>

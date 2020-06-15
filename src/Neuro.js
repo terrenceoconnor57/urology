@@ -26,11 +26,14 @@ class Neuro extends Component {
 
     this.state = {
       neurou: [],
+      search: "",
+      allfilters: [],
       institution: "",
       presentation: "",
       speaker: "",
       date: "",
-      link: ""
+      link: "",
+      appliedfilter: "No Filter applied"
     }
   }
 
@@ -100,7 +103,31 @@ class Neuro extends Component {
     window.location = '/Neuro';
   }
 
+  filteredAll = () => {
+    this.setState({ search: "",
+                  appliedfilter: "ALL LECTURES"})
+  }
+
+  filteredUCSF = () => {
+    this.setState({ search: 'UCSF',
+                    appliedfilter: "UCSF LECTURE SERIES"})
+
+  }
+
+  filteredEmpire = () => {
+    this.setState({ search: 'EMPIRE',
+                  appliedfilter: "EMPIRE LECTURE SERIES"})
+  }
+
+  filteredIcs = () => {
+    this.setState({ search: 'ICS',
+                  appliedfilter: "ICS LIVE SERIES"})
+                }
   render() {
+
+    let filteredSeries = this.state.neurou.filter((neu) => {
+            return neu.institution.toLowerCase().includes(this.state.search.toLowerCase())
+         })
 
     initAnalyze()
 
@@ -113,6 +140,20 @@ class Neuro extends Component {
 <News endPoint = 'http://52.23.208.167:5000/neurourology/'/>
 <br/>
 <br/>
+
+<div className = 'stick'>
+<div className = 'choices'>
+<ul className = 'taglist'>
+  <a className = 'filters'>Filters:</a>
+  <a className = 'focusin' onClick = {this.filteredAll}>All Lectures</a>
+  <a className = 'focusin' onClick = {this.filteredUCSF}>UCSF Series</a>
+  <a className = 'focusin' onClick = {this.filteredEmpire}>Empire Series</a>
+  <a className = 'focusin' onClick = {this.filteredIcs}>ICS Series</a>
+</ul>
+<h2 className = 'applyfilter'>Filter applied:  <a class="ui teal tag label" style = {{cursor: 'default'}}>{this.state.appliedfilter}</a></h2>
+</div>
+</div>
+
 <br/>
 
   <div className = 'colortable'>
@@ -127,7 +168,7 @@ class Neuro extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.neurou.reverse().map(neu => (
+  {filteredSeries.reverse().map(neu => (
   <tr key = {neu._id}>
     <td className = 'datatext' data-label="Name">{neu.institution}</td>
     <td className = 'datatext' data-label="Age">{neu.presentation}</td>

@@ -26,11 +26,14 @@ class Infert extends Component {
 
     this.state = {
       infert: [],
+      search: "",
+      allfilters: [],
       institution: "",
       presentation: "",
       speaker: "",
       date: "",
-      link: ""
+      link: "",
+      appliedfilter: "No Filter applied"
     }
   }
 
@@ -100,7 +103,33 @@ class Infert extends Component {
     window.location = '/Infert';
   }
 
+  filteredAll = () => {
+    this.setState({ search: "",
+                  appliedfilter: "ALL LECTURES"})
+  }
+
+  filteredUCSF = () => {
+    this.setState({ search: 'UCSF',
+                    appliedfilter: "UCSF LECTURE SERIES"})
+
+  }
+
+  filteredEmpire = () => {
+    this.setState({ search: 'EMPIRE',
+                  appliedfilter: "EMPIRE LECTURE SERIES"})
+
+  }
+
+  filteredSmiles = () => {
+    this.setState({ search: 'SMILES',
+                  appliedfilter: "SMILES LECTURE SERIES"})
+  }
+
   render() {
+
+    let filteredSeries = this.state.infert.filter((inf) => {
+            return inf.institution.toLowerCase().includes(this.state.search.toLowerCase())
+         })
 
     initAnalyze()
 
@@ -113,6 +142,20 @@ class Infert extends Component {
 <News endPoint = 'http://52.23.208.167:5000/infertility/'/>
 <br/>
 <br/>
+
+<div className = 'stick'>
+<div className = 'choices'>
+<ul className = 'taglist'>
+  <a className = 'filters'>Filters:</a>
+  <a className = 'focusin' onClick = {this.filteredAll}>All Lectures</a>
+  <a className = 'focusin' onClick = {this.filteredUCSF}>UCSF Series</a>
+  <a className = 'focusin' onClick = {this.filteredEmpire}>Empire Series</a>
+  <a className = 'focusin' onClick = {this.filteredSmiles}>SMILES Series</a>
+</ul>
+<h2 className = 'applyfilter'>Filter applied:  <a class="ui teal tag label" style = {{cursor: 'default'}}>{this.state.appliedfilter}</a></h2>
+</div>
+</div>
+
 <br/>
 
   <div className = 'colortable'>
@@ -127,7 +170,7 @@ class Infert extends Component {
   <th>Link</th>
 </tr></thead>
 <tbody>
-  {this.state.infert.reverse().map(inf => (
+  {filteredSeries.reverse().map(inf => (
   <tr key = {inf._id}>
     <td className = 'datatext' data-label="Name">{inf.institution}</td>
     <td className = 'datatext' data-label="Age">{inf.presentation}</td>
