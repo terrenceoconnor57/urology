@@ -718,6 +718,13 @@ a {
   grid-template-columns: 2fr 1fr;
 }
 
+@media (max-width: 1000px) {
+   .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+  }
+}
 
 
 .twitterdiv {
@@ -728,6 +735,16 @@ a {
   width: 400px;
 
 }
+
+@media (max-width: 1000px) {
+   .twitterdiv {
+    display: none;
+
+
+  }
+}
+
+
 
 .tsize {
   background: rgb(189, 189, 189,0.2);
