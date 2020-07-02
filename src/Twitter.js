@@ -7,7 +7,7 @@ class Twitter extends Component {
   }
 
 componentDidMount = () => {
-  fetch('http://localhost:4000/twitterfetch')
+  fetch('http://52.23.208.167/twitterfetch')
           .then(res => res.json())
           .then(json => {
 
