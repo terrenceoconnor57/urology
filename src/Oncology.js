@@ -3,6 +3,7 @@ import News from './News';
 import FilterBar from './FilterBar';
 import axios from 'axios';
 import './App.css';
+import Twitter from './Twitter';
 import ReactGA from 'react-ga';
 
 
@@ -167,6 +168,8 @@ class Oncology extends Component {
 
 <br/>
 
+<div className = 'grid'>
+
   <div className = 'colortable'>
   <h1 className = 'archive'>Urologic Oncology Archive</h1>
     <div className = 'data'>
@@ -190,6 +193,10 @@ class Oncology extends Component {
   ))}
 </tbody>
 </table>
+</div>
+</div>
+<div className = 'twitterdiv'>
+<Twitter />
 </div>
 </div>
     </div>

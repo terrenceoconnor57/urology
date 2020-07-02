@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import News from './News';
 import axios from 'axios';
 import './App.css';
+import Twitter from './Twitter';
 import ReactGA from 'react-ga';
 
 
@@ -154,6 +155,8 @@ class Pediatrics extends Component {
 
 <br/>
 
+<div className = 'grid'>
+
   <div className = 'colortable'>
   <h1 className = 'archive'>Pediatric Urology Archive</h1>
     <div className = 'data'>
@@ -177,6 +180,10 @@ class Pediatrics extends Component {
   ))}
 </tbody>
 </table>
+</div>
+</div>
+<div className = 'twitterdiv'>
+<Twitter />
 </div>
 </div>
     </div>

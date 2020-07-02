@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import News from './News';
 import SearchBar from './SearchBar';
 import FilterBar from './FilterBar';
+import Twitter from './Twitter';
 import axios from 'axios';
 import './App.css';
 import ReactGA from 'react-ga';
@@ -165,6 +166,8 @@ class General extends Component {
 
 
 
+<div className = 'grid'>
+
 
   <div className = 'colortable'>
   <h1 className = 'archive'>General Urology Archive</h1>
@@ -189,6 +192,10 @@ class General extends Component {
   ))}
 </tbody>
 </table>
+</div>
+</div>
+<div className = 'twitterdiv'>
+<Twitter />
 </div>
 </div>
     </div>

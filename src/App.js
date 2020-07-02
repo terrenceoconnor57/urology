@@ -15,6 +15,7 @@ import Backdrop from './SideDrawer/Backdrop';
 import Houses from './Houses';
 import Contact from './Contact';
 import News from './News';
+import Twitter from './Twitter';
 import ReactGA from 'react-ga';
 import axios from 'axios';
 import './App.css';
@@ -91,7 +92,6 @@ initAnalyze()
     <div className="App">
 
       <header className="App-header">
-
 
       <ul className = 'navbar'>
         <li className = 'navspec'><Link to = '/' className = 'links'><img className = 'logotop' src={"/edcentral.png"} /></Link><DrawerToggleButton
